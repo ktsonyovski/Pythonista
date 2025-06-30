@@ -73,9 +73,34 @@ class BasicFunctions:
 
     @staticmethod
     def longest_subsequent_string(input_string: str) -> str:
-        """docstring"""
+        """
+        Finds and returns the longest substring of the input string 
+        that contains no repeating characters.
+
+        Args:
+            input_string (str): The string to search within.
+
+        Returns:
+            str: The longest substring without repeating characters.
+                If there are multiple substrings of the same maximum length,
+                the first one encountered is returned.
+        """
         longest_substring = ""
-        for char in input_string:
-            if char not in longest_substring:
-                longest_substring += char
+        for start_index in range(len(input_string)):
+            current_substring = ""
+            for character in input_string[start_index:]:
+                if character in current_substring:
+                    break
+                current_substring += character
+            if len(current_substring) > len(longest_substring):
+                longest_substring = current_substring
         return longest_substring
+
+    @staticmethod
+    def check_prime(number: int) -> bool:
+        if number < 2:
+            return False
+        for i in range(2, int(number // 2) + 1):
+            if number % i == 0:
+                return False
+        return True
