@@ -58,7 +58,8 @@ def char_frequency(input_string: str) -> dict:
         input_string (str): The string to analyze.
 
     Returns:
-        dict: A dictionary where the keys are characters and the values are the number of times each character appears in the input string.
+        dict: A dictionary where the keys are characters and the values 
+        are the number of times each character appears in the input string.
 
     Example:
         BasicFunctions.char_frequency('aaardvark')
@@ -99,7 +100,8 @@ def check_prime(number: int) -> bool:
     """
     Determines whether the given number is a prime number.
 
-    A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+    A prime number is a natural number greater than 1 
+    that has no positive divisors other than 1 and itself.
 
     Args:
         number (int): The integer to check for primality.
