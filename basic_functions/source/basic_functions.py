@@ -1,7 +1,13 @@
-"""Docstring"""
+"""
+A collection of static utility functions for string and number operations.
+"""
 
 class BasicFunctions:
-    """Docstring"""
+    """
+    A utility class providing static methods for common string and number operations,
+    such as checking for anagrams and palindromes, generating Fibonacci numbers,
+    calculating character frequency, finding the longest unique substring, and checking for prime numbers.
+    """
     
     @staticmethod
     def is_anagram(string1: str, string2: str) -> bool:
@@ -67,7 +73,7 @@ class BasicFunctions:
             {'a': 4, 'r': 2, 'd': 1, 'v': 1, 'k': 1}
         """
         counter = {}
-        for char in input_string:
+        for char in input_string.lower():
             counter[char] = counter.get(char, 0) + 1
         return counter
 
@@ -98,6 +104,17 @@ class BasicFunctions:
 
     @staticmethod
     def check_prime(number: int) -> bool:
+        """
+        Determines whether the given number is a prime number.
+
+        A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+
+        Args:
+            number (int): The integer to check for primality.
+
+        Returns:
+            bool: True if the number is prime, False otherwise.
+        """
         if number < 2:
             return False
         for i in range(2, int(number // 2) + 1):
