@@ -6,7 +6,7 @@ class BasicFunctions:
     """
     A utility class providing static methods for common string and number operations,
     such as checking for anagrams and palindromes, generating Fibonacci numbers,
-    calculating character frequency, finding the longest unique substring, and checking for prime numbers.
+    calculating character frequency, finding the longest unique substring, checking for prime numbers etc..
     """
     
     @staticmethod
