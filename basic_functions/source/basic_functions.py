@@ -15,7 +15,6 @@ def is_anagram(string1: str, string2: str) -> bool:
     """
     return sorted(string1) == sorted(string2)
 
-
 def is_palindrome(string1: str) -> bool:
     """
     Check if a given string is a palindrome.
@@ -29,8 +28,6 @@ def is_palindrome(string1: str) -> bool:
         bool: True if the string is a palindrome, False otherwise.
     """
     return string1 == string1[::-1]
-
-
 
 def fibonacci_numbers(count: int) -> list:
     """
@@ -48,7 +45,6 @@ def fibonacci_numbers(count: int) -> list:
         fib_list.append(a)
         a, b = b, a + b
     return fib_list
-
 
 def char_frequency(input_string: str) -> dict:
     """
@@ -69,7 +65,6 @@ def char_frequency(input_string: str) -> dict:
     for char in input_string.lower():
         counter[char] = counter.get(char, 0) + 1
     return counter
-
 
 def longest_subsequent_string(input_string: str) -> str:
     """
@@ -95,7 +90,6 @@ def longest_subsequent_string(input_string: str) -> str:
             longest_substring = current_substring
     return longest_substring
 
-
 def check_prime(number: int) -> bool:
     """
     Determines whether the given number is a prime number.
@@ -116,7 +110,6 @@ def check_prime(number: int) -> bool:
             return False
     return True
 
-
 def recursive_factorial(number: int) -> int:
     """
     Calculate the factorial of a non-negative integer using recursion.
@@ -134,7 +127,6 @@ def recursive_factorial(number: int) -> int:
     if number < 0:
         raise ValueError("Factorial is not defined for negative numbers.")
     return 1 if number == 0 else number * recursive_factorial(number - 1)
-
 
 
 def iterative_factorial(number: int) -> int:
