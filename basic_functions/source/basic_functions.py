@@ -121,3 +121,44 @@ class BasicFunctions:
             if number % i == 0:
                 return False
         return True
+
+    @staticmethod
+    def recursive_factorial(number: int) -> int:
+        """
+        Calculate the factorial of a non-negative integer using recursion.
+
+        Args:
+            number (int): The number to calculate the factorial of.
+
+        Returns:
+            int: The factorial of the given number.
+
+        Raises:
+            RecursionError: If the recursion depth is exceeded for very large inputs.
+            ValueError: If the input number is negative.
+        """
+        if number < 0:
+            raise ValueError("Factorial is not defined for negative numbers.")
+        return 1 if number == 0 else number * BasicFunctions.recursive_factorial(number - 1)
+
+
+    @staticmethod
+    def iterative_factorial(number: int) -> int:
+        """
+        Calculate the factorial of a non-negative integer using an iterative approach.
+
+        Args:
+            number (int): The number to calculate the factorial of.
+
+        Returns:
+            int: The factorial of the given number.
+
+        Raises:
+            ValueError: If the input number is negative.
+        """
+        if number < 0:
+            raise ValueError("Factorial is not defined for negative numbers.")
+        total = 1
+        for num in range(1, number + 1):
+            total *= num
+        return total
