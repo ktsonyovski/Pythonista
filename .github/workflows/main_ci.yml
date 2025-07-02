@@ -25,13 +25,11 @@ jobs:
     - name: Discover and process projects
       run: |
         for project in $(find . -type d -name 'tests' -exec dirname {} \; | sort -u); do
+          base=$(basename "$project")
           echo "Processing project: $project"
+          echo "Running pylint for $project/$base"
           
-          if [ -d "$project/source" ]; then
-            base=$(basename "$project")
-            echo "Running pylint for $project/$base"
-            pylint "$project/$base" || true
-          fi
+          pylint "$project/$base" || true
           
           if [ -d "$project/tests" ]; then
             echo "Running tests for $project"
