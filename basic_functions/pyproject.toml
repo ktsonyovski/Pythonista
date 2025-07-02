@@ -1,0 +1,18 @@
+[project]
+name = "basic_functions"
+version = "0.1.0"
+description = "A collection of static utility functions for string and number operations."
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest-cov (>=6.2.1,<7.0.0)",
+    "pylint (>=3.3.7,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

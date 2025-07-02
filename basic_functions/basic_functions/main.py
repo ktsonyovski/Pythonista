@@ -128,7 +128,6 @@ def recursive_factorial(number: int) -> int:
         raise ValueError("Factorial is not defined for negative numbers.")
     return 1 if number == 0 else number * recursive_factorial(number - 1)
 
-
 def iterative_factorial(number: int) -> int:
     """
     Calculate the factorial of a non-negative integer using an iterative approach.
@@ -148,3 +147,24 @@ def iterative_factorial(number: int) -> int:
     for num in range(1, number + 1):
         total *= num
     return total
+
+def is_leap_year(year: int) -> bool:
+    """
+    Determine whether a given year is a leap year.
+
+    A year is a leap year if it is divisible by 4 but not by 100,
+    except if it is divisible by 400.
+
+    Args:
+        year (int): The year to check.
+
+    Returns:
+        bool: True if the year is a leap year, False otherwise.
+    """
+    if year % 400 == 0:
+        return True
+    if year % 100 == 0:
+        return False
+    if year % 4 == 0:
+        return True
+    return False

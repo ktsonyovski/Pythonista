@@ -10,7 +10,7 @@ Example usage (with pytest):
 """
 
 import pytest
-from source.main import MyMath
+from my_math.main import MyMath
 
 
 class TestMyMath:
