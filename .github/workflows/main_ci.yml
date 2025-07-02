@@ -29,7 +29,7 @@ jobs:
           
           if [ -d "$project/source" ]; then
             echo "Running pylint for $project"
-            pylint "$project/source" || true
+            pylint "$project/$project" || true
           fi
           
           if [ -d "$project/tests" ]; then
