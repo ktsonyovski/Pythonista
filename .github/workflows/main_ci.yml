@@ -28,7 +28,6 @@ jobs:
           echo "Processing project: $project"
           
           if [ -d "$project/source" ]; then
-            # Extract the base folder name (e.g., 'basic_functions' from './basic_functions')
             base=$(basename "$project")
             echo "Running pylint for $project/$base"
             pylint "$project/$base" || true
