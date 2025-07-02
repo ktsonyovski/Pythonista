@@ -34,7 +34,7 @@ jobs:
           if [ -d "$project/tests" ]; then
             echo "Running tests for $project"
             cd "$project"
-            pytest --cov=source
+            pytest --cov
             cd - > /dev/null
           fi
         done
