@@ -11,7 +11,8 @@ This is a simple Python implementation of the classic "Rock, Paper, Scissors" ga
 ## Usage
 
 Run the game using the following command:
-```bash
+```
+bash
 python main.py
 ```
 
