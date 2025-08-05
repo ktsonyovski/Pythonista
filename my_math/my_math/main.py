@@ -9,7 +9,7 @@ Example:
     from mymath import MyMath
 
     result_add = MyMath.add(5, 3)         # 8
-    result_sub = MyMath.substract(5, 3)   # 2
+    result_sub = MyMath.subtract(5, 3)   # 2
     result_mul = MyMath.multiply(5, 3)    # 15.0
     result_div = MyMath.divide(5, 2)      # 2.5
 """
@@ -24,7 +24,7 @@ class MyMath:
     Functionalities:
         - Addition of two integers
         - Subtraction of two integers
-        - Multiplication of two integers (returns float)
+        - Multiplication of two integers (returns int)
         - Division of two integers (returns float)
 
     Example usage:
@@ -53,7 +53,7 @@ class MyMath:
         return number1 + number2
 
     @staticmethod
-    def substract(number1: int, number2: int) -> int:
+    def subtract(number1: int, number2: int) -> int:
         """
         Subtract the second integer from the first and return the result.
 
@@ -69,7 +69,7 @@ class MyMath:
     @staticmethod
     def multiply(number1: int, number2: int) -> float:
         """
-        Multiply two integers and return the product as a float.
+        Multiply two integers and return the product as an int.
 
         Args:
             number1 (int): The first number to multiply.
@@ -78,7 +78,7 @@ class MyMath:
         Returns:
             float: The product of number1 and number2.
         """
-        return number1 * number2
+        return float(number1 * number2)
 
     @staticmethod
     def divide(number1: int, number2: int) -> float:
