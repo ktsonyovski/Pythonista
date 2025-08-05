@@ -39,23 +39,23 @@ def fibonacci_numbers(count: int) -> list:
     Returns:
         list: A list containing the Fibonacci sequence up to 'count' numbers.
     """
-    fib_list = []
+    fibonacci_sequence = []
     a, b = 0, 1
     for _ in range(count):
-        fib_list.append(a)
+        fibonacci_sequence.append(a)
         a, b = b, a + b
-    return fib_list
+    return fibonacci_sequence
 
 def char_frequency(input_string: str) -> dict:
     """
-    Calculates the frequency of each character in the given string.
+    Calculates the frequency of each character in the given string (case-insensitive).
 
     Args:
         input_string (str): The string to analyze.
 
     Returns:
         dict: A dictionary where the keys are characters and the values 
-        are the number of times each character appears in the input string.
+        are the number of times each character appears in the input string (ignoring case).
 
     Example:
         BasicFunctions.char_frequency('aaardvark')
