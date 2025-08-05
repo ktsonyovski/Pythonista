@@ -5,10 +5,10 @@ A simple Python module providing basic arithmetic operations with comprehensive 
 ## Project Structure
 
 my_math/<br>
-├── source/ # Source code for the my_math module<br>
+├── my_math/ # Source code for the my_math module<br>
 │ └── main.py # Implementation of MyMath class<br>
 └── tests/ # Unit tests for the module<br>
-│└── test_main.py
+│└── test_my_math.py
 
 ## Features
 
