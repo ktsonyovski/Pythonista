@@ -37,7 +37,7 @@ class TestPalindrome:
     def test_non_palindrome_returns_false(self):
         assert not is_palindrome('test_string')
 
-    def test_palidrome_list_returns_true(self):
+    def test_palindrome_list_returns_true(self):
         assert is_palindrome(['r', 'a', 'c', 'e', 'c', 'a', 'r'])
 
     def test_palindrome_is_case_sensitive(self):

@@ -40,18 +40,18 @@ class TestMyMath:
     def test_addition_with_zero(self):
         assert MyMath.add(2, 0) == 2
 
-    # Tests for substract function
-    def test_substract_with_positive_integers(self):
-        assert MyMath.substract(5, 2) == 3
+    # Tests for subtract function
+    def test_subtract_with_positive_integers(self):
+        assert MyMath.subtract(5, 2) == 3
 
-    def test_substract_with_negative_result(self):
-        assert MyMath.substract(2, 5) == -3
+    def test_subtract_with_negative_result(self):
+        assert MyMath.subtract(2, 5) == -3
 
-    def test_substract_with_zero(self):
-        assert MyMath.substract(0, 0) == 0
+    def test_subtract_with_zero(self):
+        assert MyMath.subtract(0, 0) == 0
 
-    def test_substract_with_floats(self):
-        assert MyMath.substract(5.5, 2.5) == 3.0
+    def test_subtract_with_floats(self):
+        assert MyMath.subtract(5.5, 2.5) == 3.0
 
     # Tests for multiply function
     def test_multiply_with_positive_integers(self):
