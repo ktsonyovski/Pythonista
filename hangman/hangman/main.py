@@ -1,43 +1,46 @@
+"""Hangman Game Main Module
+This module contains the main functionality for the Hangman game, including loading words,"""
 import json
 import random
 
 # Constant for the file path to the words JSON file
 FILE_PATH = 'hangman/resources/words.json'
 
-def load_words(difficulty):
+def load_words(file=FILE_PATH, difficulty=None) -> list:
     """
     Load words from a JSON file.
 
-    The JSON file should have a dictionary structure with difficulty levels ('easy', 'medium', 'hard') as keys,
+    The JSON file should have a dictionary structure with difficulty levels as keys,
     and lists of words as values.
 
     Returns:
-        list: List of words for the given difficulty, or None if not found.
+        list: List of words for the given difficulty, or an empty list if not found.
     """
     try:
-        with open(FILE_PATH, 'r') as file:
-            words = json.load(file)
-            return words.get(difficulty)
+        with open(file, 'r', encoding='UTF-8') as f:
+            words = json.load(f)
+            return words.get(difficulty, [])
     except FileNotFoundError:
         print(f"Error: The file {FILE_PATH} was not found.")
+        return []
     except json.JSONDecodeError:
         print("Error: The file is not a valid JSON.")
+        return []
 
-def difficulty_level():
+def difficulty_level() -> list:
     """Prompt user for difficulty level and return it."""
 
     level = input("Choose difficulty level (easy, medium, hard): ").strip().lower()
     if level == "easy":
-        return load_words('easy')
-    elif level == "medium":
-        return load_words('medium')
-    elif level == "hard":
-        return load_words('hard')
-    else:
-        print("Invalid difficulty level. Please try again.")
-        return difficulty_level()
+        return load_words(difficulty='easy')
+    if level == "medium":
+        return load_words(difficulty='medium')
+    if level == "hard":
+        return load_words(difficulty='hard')
+    print("Invalid difficulty level. Please try again.")
+    return difficulty_level()
 
-def main():
+def main() -> None:
     """Main function to run the Hangman game."""
     words = difficulty_level()
 
@@ -47,12 +50,12 @@ def main():
 
     chosen_word = random.choice(words)
     print(f"Word to guess: {'_ ' * len(chosen_word)}")
-    
+
     lives = len(chosen_word)
     print(f"Lives remaining: {lives}")
-    
+
     display_word = ['_'] * len(chosen_word)
-    
+
     guessed_letters = set()
 
     while lives > 0 and "_" in display_word:
@@ -60,7 +63,7 @@ def main():
         if len(user_input) != 1 or not user_input.isalpha():
             print("Please enter a single alphabetic character.")
             continue
-        
+
         if user_input in chosen_word:
             for index, char in enumerate(chosen_word):
                 if char == user_input:
