@@ -9,7 +9,7 @@ def _load_alphabet() -> list[str]:
     # Get the directory where this script is located
     script_dir = Path(__file__).parent
     alphabet_path = script_dir.parent / "resources" / "alphabet.json"
-    
+
     try:
         with open(alphabet_path, encoding="utf-8") as f:
             return json.load(f)["alphabet"]
@@ -33,11 +33,11 @@ def caesar_cipher(input_string: str, operation: str, shift: int) -> str:
     """
     if operation not in ("encrypt", "decrypt"):
         raise ValueError("Operation must be 'encrypt' or 'decrypt'")
-    
+
     alphabet = _load_alphabet()
     result = ""
     shift_amount = shift if operation == "encrypt" else -shift
-    
+
     for char in input_string:
         if char in alphabet:
             new_index = (alphabet.index(char) + shift_amount) % len(alphabet)

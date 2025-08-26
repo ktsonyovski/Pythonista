@@ -1,0 +1,19 @@
+[project]
+name = "ceaser-cipher"
+version = "0.0.1"
+description = "This module provides functionality to encrypt and decrypt text using the Caesar cipher technique.It reads the alphabet from a JSON file and allows users to specify"
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pytest (>=8.4.1,<9.0.0)",
+    "pylint (>=3.3.8,<4.0.0)",
+    "pytest-cov (>=6.2.1,<7.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
