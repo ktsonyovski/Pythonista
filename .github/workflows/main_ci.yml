@@ -29,7 +29,6 @@ jobs:
           echo "======================================"
           echo "Running tests for project: $project"
           echo "======================================"
-          echo "Processing project: $project"
           echo "Running pylint for $project/$base"
           
           pylint "$project/$base" || true
