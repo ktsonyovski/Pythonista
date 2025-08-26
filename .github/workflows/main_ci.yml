@@ -26,6 +26,9 @@ jobs:
       run: |
         for project in $(find . -type d -name 'tests' -exec dirname {} \; | sort -u); do
           base=$(basename "$project")
+          echo "======================================"
+          echo "Running tests for project: $project"
+          echo "======================================"
           echo "Processing project: $project"
           echo "Running pylint for $project/$base"
           
@@ -38,4 +41,3 @@ jobs:
             cd - > /dev/null
           fi
         done
-
