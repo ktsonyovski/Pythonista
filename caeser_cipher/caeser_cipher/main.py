@@ -1,6 +1,7 @@
 """Caesar cipher implementation.
 This module provides functionality to encrypt and decrypt text using the Caesar cipher technique.
 It reads the alphabet from a JSON file and allows users to specify the shift amount."""
+
 import json
 from pathlib import Path
 
