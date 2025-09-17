@@ -34,3 +34,15 @@ class TestCaesarCipher():
     def test_cipher_incorrect_operation_raises_value_error(self):
         with pytest.raises(ValueError):
             caesar_cipher("abc", "invalid_operation", 3)
+
+    def test_cipher_with_shift_larger_than_alphabet_length(self):
+        actual_output = caesar_cipher("wxy", "encrypt", 27)
+        expected_output = "xyz"
+
+        assert actual_output == expected_output
+
+    def test_with_negative_shift(self):
+        actual_output = caesar_cipher("def", "encrypt", -3)
+        expected_output = "abc"
+
+        assert actual_output == expected_output
